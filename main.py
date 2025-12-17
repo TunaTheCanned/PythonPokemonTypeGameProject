@@ -74,10 +74,14 @@ while running:
             menu_state = "game is active"
 
         if load_game_button.check_click():
-            tkinter.Tk().withdraw()
-            filepath = filedialog.askopenfilename()
-            print(filepath)
-            #TODO loading data from save
+            try:
+                tkinter.Tk().withdraw()
+                filepath = filedialog.askopenfilename()
+                print(filepath)
+                #TODO loading data from save
+            except:
+                #TODO make it catch the exception when user tries to open a wrong file
+                print("wrong file extension")
 
         if leave_game_button.check_click():
             running = False
