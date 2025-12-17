@@ -32,7 +32,7 @@ while running:
     start_button = button.Button("Start Game", font, "purple", "blue",
                                  160, 160, 300, 100, 5,
                                  "black", 5, screen, True)
-    load_game_button = button.Button("Load Game", font, "purple", "lime",
+    load_game_button = button.Button("Load Game", font, "purple", "yellow",
                                      160, 260, 300, 100, 5,
                                      "black", 5, screen, True)
     leave_game_button = button.Button("Leave Game", font, "purple", "gray",
@@ -53,6 +53,8 @@ while running:
         start_button.draw()
         load_game_button.draw()
         leave_game_button.draw()
+        if start_button.check_click():
+            print(start_button.check_click())
     else:
         pass
 
