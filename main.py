@@ -2,6 +2,8 @@ import time
 import keyboard
 import pygame
 import button
+import tkinter
+from tkinter import filedialog
 
 #initialize the game window
 pygame.init()
@@ -19,58 +21,82 @@ def draw_text(text, font, color, x, y):
 
 
 #game variables
+game_start_menu = True
+menu_state = "start menu"
 pause = False
 running = True
 clock = pygame.time.Clock()
 player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 dt = 0
 
+#buttons
+start_button = button.Button("Start Game", font, "purple", "blue",
+                             300, 100, 5,
+                             "black", 5, screen, True)
+load_game_button = button.Button("Load Game", font, "purple", "yellow",
+                                 300, 100, 5,
+                                 "black", 5, screen, True)
+leave_game_button = button.Button("Leave Game", font, "purple", "gray",
+                                  300, 100, 5,
+                                  "black", 5, screen, True)
 
 #main loop for running the game
 while running:
 
-    start_button = button.Button("Start Game", font, "purple", "blue",
-                                 160, 160, 300, 100, 5,
-                                 "black", 5, screen, True)
-    load_game_button = button.Button("Load Game", font, "purple", "yellow",
-                                     160, 260, 300, 100, 5,
-                                     "black", 5, screen, True)
-    leave_game_button = button.Button("Leave Game", font, "purple", "gray",
-                                      160, 360, 300, 100, 5,
-                                      "black", 5, screen, True)
 
+    #event type keydown works prints only once on keyboard press
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 pause = True
+            if event.key == pygame.K_ESCAPE:
+                menu_state = "start menu"
+            if event.key == pygame.K_r:
+                print('debug')
         if event.type == pygame.QUIT:
             running = False
 
+    #ten kod printuje z kazdym tickiem gry
+    #keys = pygame.key.get_pressed()
+    #if keys[pygame.K_b]:
+    #    print('debug b')
+
     screen.fill("red")
 
-    if pause == True:
-        draw_text("AAAAAAAAAAAAAAAAAAAAAAAAA", font, TEXT_COLOR, 160, 250)
-        start_button.draw()
-        load_game_button.draw()
-        leave_game_button.draw()
+    if menu_state == "start menu":
+
+        start_button.draw(160, 160)
+        load_game_button.draw(160, 260)
+        leave_game_button.draw(160, 360)
+
         if start_button.check_click():
             print(start_button.check_click())
+            menu_state = "game is active"
+
+        if load_game_button.check_click():
+            tkinter.Tk().withdraw()
+            filepath = filedialog.askopenfilename()
+            print(filepath)
+            #TODO loading data from save
+
+        if leave_game_button.check_click():
+            running = False
     else:
         pass
 
-    pygame.draw.circle(screen, 'yellow', player_pos, 40)
-
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_w]:
-        player_pos.y -= 300 * dt
-    if keys[pygame.K_s]:
-        player_pos.y += 300 * dt
-    if keys[pygame.K_a]:
-        player_pos.x -= 300 * dt
-    if keys[pygame.K_d]:
-        player_pos.x += 300 * dt
-    if keys[pygame.K_x]:
-        running = False
+    if menu_state == "game is active":
+        pygame.draw.circle(screen, 'yellow', player_pos, 40)
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_w]:
+            player_pos.y -= 300 * dt
+        if keys[pygame.K_s]:
+            player_pos.y += 300 * dt
+        if keys[pygame.K_a]:
+            player_pos.x -= 300 * dt
+        if keys[pygame.K_d]:
+            player_pos.x += 300 * dt
+        if keys[pygame.K_x]:
+            running = False
 
     # pygame.display.flip()
     pygame.display.update()
