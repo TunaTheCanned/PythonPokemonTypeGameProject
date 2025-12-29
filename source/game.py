@@ -2,6 +2,7 @@ import pygame
 from source.game_state import GameState
 from source.renderer import Renderer
 from states.creature_selection import CreatureSelectionState
+from states.message import MessageState
 from states.start_menu import StartMenuState
 from states.playing import PlayingState
 from source.player import Player
@@ -23,7 +24,12 @@ class Game:
 
         self.players = [Player("Player 1"), Player("Player 2")]
         self.current_player_index = 0
+        self.selected_creature = None
+        self.battle_result = None
 
+        self.message_text = ""
+        self.message_duration = 0.0
+        self.message_next_state = None
 
 
     def get_height(self):
@@ -42,7 +48,8 @@ class Game:
                 self.game_state = PlayingState(self)
             case GameState.CREATURE_SELECTION:
                 self.game_state = CreatureSelectionState(self, 0)
-
+            case GameState.MESSAGE:
+                self.game_state = MessageState(self)
             # case GameState.FIGHTING:
             #     self.game_state = PlayingState(self)
 

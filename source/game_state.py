@@ -6,3 +6,4 @@ class GameState(Enum):
     PAUSED = auto()
     FIGHTING = auto()
     CREATURE_SELECTION = auto()
+    MESSAGE = auto()

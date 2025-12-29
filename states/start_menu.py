@@ -1,9 +1,12 @@
 import pygame
+
 from states.state_base import State
 from source.game_state import GameState
 from source import button
 import tkinter
 from tkinter import filedialog
+from source.creature_loader import load_creature
+from states.message import MessageState
 
 
 class StartMenuState(State):
@@ -39,19 +42,21 @@ class StartMenuState(State):
 
     def update(self, dt):
         if self.start_button.consume_click():
-            self.game.change_state(GameState.CREATURE_SELECTION)
+            self.game.message_text = "Player 1 Choosing"
+            self.game.message_duration = 2.0
+            self.game.message_next_state = GameState.CREATURE_SELECTION
+            self.game.current_player_index = 1
+            self.game.change_state(GameState.MESSAGE)
 
         elif self.load_game_button.consume_click():
-            self.game.change_state(GameState.GAME_IS_ACTIVE)
-            # try:
-            #     tkinter.Tk().withdraw()
-            #     filepath = filedialog.askopenfilename()
-            #     print(filepath)
-            #     #TODO loading data from save
-            #     pass
-            # except:
-            #     #TODO make it catch the exception when user tries to open a wrong file
-            #     print("wrong file extension")
+            # self.game.change_state(GameState.GAME_IS_ACTIVE)
+            try:
+                tkinter.Tk().withdraw()
+                filepath = filedialog.askopenfilename()
+                load_creature(filepath)
+            except:
+                #TODO make it catch the exception when user tries to open a wrong file
+                print("wrong file extension")
 
 
         elif self.leave_game_button.consume_click():
