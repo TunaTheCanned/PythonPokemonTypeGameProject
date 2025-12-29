@@ -1,6 +1,6 @@
 import pygame
 
-from game_state import GameState
+from source.game_state import GameState
 from states.state_base import State
 
 class PlayingState(State):

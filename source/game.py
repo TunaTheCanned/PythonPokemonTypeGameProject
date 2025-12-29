@@ -1,8 +1,10 @@
 import pygame
-from game_state import GameState
-from renderer import Renderer
+from source.game_state import GameState
+from source.renderer import Renderer
+from states.creature_selection import CreatureSelectionState
 from states.start_menu import StartMenuState
 from states.playing import PlayingState
+from source.player import Player
 
 class Game:
     def __init__(self, width, height, title):
@@ -19,6 +21,17 @@ class Game:
         self.game_state = None
         self.change_state(GameState.START_MENU)
 
+        self.players = [Player("Player 1"), Player("Player 2")]
+        self.current_player_index = 0
+
+
+
+    def get_height(self):
+        return self.screen.get_height()
+    def get_width(self):
+        return self.screen.get_width()
+
+
 
 
     def change_state(self, state):
@@ -27,8 +40,13 @@ class Game:
                 self.game_state = StartMenuState(self)
             case GameState.GAME_IS_ACTIVE:
                 self.game_state = PlayingState(self)
+            case GameState.CREATURE_SELECTION:
+                self.game_state = CreatureSelectionState(self, 0)
+
             # case GameState.FIGHTING:
             #     self.game_state = PlayingState(self)
+
+
 
 
     def handle_events(self):
@@ -39,11 +57,15 @@ class Game:
                 self.game_state.handle_event(event)
 
 
+
+
     # def render(self):
     #     self.screen.fill((0, 0, 0))
     #     self.renderer.draw()
     #     #self.renderer.draw_text()
     #     self.screen.display.update()
+
+
 
 
     def run(self):

@@ -31,7 +31,7 @@ def darken_color(color, amount):
 
 
 class Button:
-    def __init__(self, text, font, text_color, button_color, width,
+    def __init__(self, text, text_color, button_color, width,
                  height, rounded_border_radius, border_color, border_color_thickness, screen, enabled):
         #in order
         #text = text we want to display on the button
@@ -46,8 +46,10 @@ class Button:
         #screen = where the button is supposed to be drawn, just use "screen", it is our display
         #enabled = if the button is supposed to be enabled or not, it will still show, but enabled = False button will not be able to be clicked
 
+        self.font = pygame.font.SysFont("comicsans", 40)
+
         self.text = text
-        self.font = font
+        # self.font = font
         self.text_color = COLOR_MAP[text_color]
         self.button_color = COLOR_MAP[button_color]
         self.width = width
@@ -61,6 +63,7 @@ class Button:
         self.rect = pygame.Rect(0, 0, width, height)
         self.hovered = False
         self.clicked = False
+        self.pressed = False
         self.text_surface = self.font.render(self.text, True, self.text_color)
 
     def set_position(self, x, y):
@@ -75,20 +78,23 @@ class Button:
             self.hovered = self.rect.collidepoint(event.pos)
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            self.hovered = self.rect.collidepoint(event.pos)
-            if self.hovered:
-                self.clicked = True
+            if self.rect.collidepoint(event.pos):
+                self.pressed = True
 
-        elif event.type == pygame.MOUSEBUTTONUP:
-            self.hovered = self.rect.collidepoint(event.pos)
-            if self.clicked and self.hovered:
+        elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+            if self.pressed and self.rect.collidepoint(event.pos):
                 self.clicked = True
-            self.clicked = False
+            self.pressed = False
 
     def draw(self):
-        color = self.button_color
-        if self.hovered:
-            color = darken_color(self.button_color, 40)
+        base_color = self.button_color
+
+        if self.pressed:
+            color = darken_color(base_color, 100)
+        elif self.hovered:
+            color = darken_color(base_color, 40)
+        else:
+            color = base_color
 
         pygame.draw.rect(self.screen, color, self.rect, border_radius=self.rounded_border_radius)
         pygame.draw.rect(self.screen, self.border_color, self.rect, self.border_color_thickness, border_radius=self.rounded_border_radius)

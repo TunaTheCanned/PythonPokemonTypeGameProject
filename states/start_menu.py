@@ -1,7 +1,7 @@
 import pygame
 from states.state_base import State
-from game_state import GameState
-import button
+from source.game_state import GameState
+from source import button
 import tkinter
 from tkinter import filedialog
 
@@ -9,22 +9,22 @@ from tkinter import filedialog
 class StartMenuState(State):
     def __init__(self, game):
         super().__init__(game)
-        self.font = pygame.font.SysFont("comicsans", 40)
 
 
-        self.start_button = button.Button("Start Game", self.font,"white", "purple",
+
+        self.start_button = button.Button("Start Game", "white", "purple",
                                           300, 100, 5,
                                           "black", 5, game.screen, True)
         self.start_button.set_position(160, 160)
 
 
-        self.load_game_button = button.Button("Load Game", self.font, "purple", "yellow",
+        self.load_game_button = button.Button("Load Game", "purple", "yellow",
                                               300, 100, 5,
                                               "black", 5, game.screen, True)
         self.load_game_button.set_position(160, 280)
 
 
-        self.leave_game_button = button.Button("Leave Game", self.font, "purple", "gray",
+        self.leave_game_button = button.Button("Leave Game", "purple", "gray",
                                                300, 100, 5,
                                                "black", 5, game.screen, True)
         self.leave_game_button.set_position(160, 400)
@@ -35,28 +35,27 @@ class StartMenuState(State):
         self.load_game_button.handle_events(event)
         self.leave_game_button.handle_events(event)
 
+
+
+    def update(self, dt):
         if self.start_button.consume_click():
-            self.game.change_state(GameState.GAME_IS_ACTIVE)
+            self.game.change_state(GameState.CREATURE_SELECTION)
 
         elif self.load_game_button.consume_click():
-            try:
-                tkinter.Tk().withdraw()
-                filepath = filedialog.askopenfilename()
-                print(filepath)
-                #TODO loading data from save
-            except:
-                #TODO make it catch the exception when user tries to open a wrong file
-                print("wrong file extension")
+            self.game.change_state(GameState.GAME_IS_ACTIVE)
+            # try:
+            #     tkinter.Tk().withdraw()
+            #     filepath = filedialog.askopenfilename()
+            #     print(filepath)
+            #     #TODO loading data from save
+            #     pass
+            # except:
+            #     #TODO make it catch the exception when user tries to open a wrong file
+            #     print("wrong file extension")
 
 
         elif self.leave_game_button.consume_click():
             self.game.running = False
-
-
-
-
-    def update(self, dt):
-        pass
 
 
 
