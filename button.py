@@ -1,6 +1,7 @@
 import pygame
 
 #dictionary mapping color names to rgb values. we using a dict here !! :DDD !!!!
+#TODO add more colors
 COLOR_MAP = {
     "black": (0, 0, 0),
     "white": (255, 255, 255),
@@ -14,11 +15,19 @@ COLOR_MAP = {
 
 #function to darken the color, we subtract the amount from the rgb values of the color
 def darken_color(color, amount):
-    return (
-        max(0, color[0] - amount),
-        max(0, color[1] - amount),
-        max(0, color[2] - amount),
-    )
+    if amount < 0:
+        return (
+            min(255, color[0] - amount),
+            min(255, color[1] - amount),
+            min(255, color[2] - amount),
+        )
+    else:
+        return (
+            max(0, color[0] - amount),
+            max(0, color[1] - amount),
+            max(0, color[2] - amount),
+        )
+
 
 
 class Button:
@@ -48,38 +57,47 @@ class Button:
         self.border_color_thickness = border_color_thickness
         self.screen = screen
         self.enabled = enabled
-        self.x_pos = 0
-        self.y_pos = 0
 
-    def draw(self, x_pos, y_pos):
-        self.x_pos = x_pos
-        self.y_pos = y_pos
-        button_text = self.font.render(self.text, True, self.text_color)
-        button_rect = pygame.rect.Rect(x_pos, y_pos, self.width, self.height)
+        self.rect = pygame.Rect(0, 0, width, height)
+        self.hovered = False
+        self.clicked = False
+        self.text_surface = self.font.render(self.text, True, self.text_color)
 
-        #dim the button when pressed
-        if self.check_click():
-            pygame.draw.rect(self.screen, darken_color(self.button_color, 50), button_rect, 0, self.rounded_border_radius)
-        else:
-            #else its just normal
-            pygame.draw.rect(self.screen, self.button_color, button_rect, 0, self.rounded_border_radius)
+    def set_position(self, x, y):
+        self.rect.topleft = (x, y)
 
-        pygame.draw.rect(self.screen, self.border_color, button_rect, self.border_color_thickness, self.rounded_border_radius)
 
-        #this positions the text at the top left corner
-        #self.screen.blit(button_text, button_rect)
+    def handle_events(self, event):
+        if not self.enabled:
+            return
 
-        #this moves the button 10 units to the right and down from the top left corner
-        self.screen.blit(button_text, (x_pos + 10, y_pos + 10))
+        if event.type == pygame.MOUSEMOTION:
+            self.hovered = self.rect.collidepoint(event.pos)
 
-    #function to check if the button has been clicked
-    def check_click(self):
-        mouse_pos = pygame.mouse.get_pos()
-        left_click = pygame.mouse.get_pressed()[0]
-        button_rect = pygame.rect.Rect(self.x_pos, self.y_pos, self.width, self.height)
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            self.hovered = self.rect.collidepoint(event.pos)
+            if self.hovered:
+                self.clicked = True
 
-        #the button must be enabled to be clicked
-        if (left_click and button_rect.collidepoint(mouse_pos) and self.enabled):
+        elif event.type == pygame.MOUSEBUTTONUP:
+            self.hovered = self.rect.collidepoint(event.pos)
+            if self.clicked and self.hovered:
+                self.clicked = True
+            self.clicked = False
+
+    def draw(self):
+        color = self.button_color
+        if self.hovered:
+            color = darken_color(self.button_color, 40)
+
+        pygame.draw.rect(self.screen, color, self.rect, border_radius=self.rounded_border_radius)
+        pygame.draw.rect(self.screen, self.border_color, self.rect, self.border_color_thickness, border_radius=self.rounded_border_radius)
+
+        text_rect = self.text_surface.get_rect(center=self.rect.center)
+        self.screen.blit(self.text_surface, text_rect)
+
+    def consume_click(self):
+        if self.clicked:
+            self.clicked = False
             return True
-        else:
-            return False
+        return False
