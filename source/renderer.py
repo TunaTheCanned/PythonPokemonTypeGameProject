@@ -14,6 +14,6 @@ class Renderer:
         self.screen.blit(img, pos)
 
     def draw_centered_text(self, text):
-        img = self.font.render(text, True, (0, 0, 0))
-        pos = (self.screen.get_width() // 2, self.screen.get_height() // 2)
+        img = self.font.render(text, True, (255, 255, 255))
+        pos = img.get_rect(center=(self.screen.get_width() // 2, self.screen.get_height() // 2))
         self.screen.blit(img, pos)

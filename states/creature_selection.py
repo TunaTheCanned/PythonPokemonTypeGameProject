@@ -37,13 +37,19 @@ class CreatureSelectionState(State):
             self.index += 1
         if self.select_button.consume_click():
             # player.creature = self.creatures[self.index]
-
             self.game.current_player_index += 1
-
-            if self.game.current_player_index ==2:
-                self.game.change_state(GameState.FIGHTING)
+            if self.game.current_player_index == 3:
+                self.game.message_text = "Fight!"
+                self.game.message_duration = 2.0
+                self.game.message_next_state = GameState.FIGHTING
+                self.game.change_state(GameState.MESSAGE)
             else:
                 self.index = 0
+                self.game.message_text = f"Player {self.game.current_player_index} Choosing"
+                self.game.message_duration = 2.0
+                self.game.message_next_state = GameState.CREATURE_SELECTION
+                self.game.change_state(GameState.MESSAGE)
+
 
     def draw(self):
         self.game.renderer.clear((30, 30, 30))
