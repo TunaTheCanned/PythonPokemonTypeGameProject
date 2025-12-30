@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Skeleton",
+        "hp": 100,
+        "attack": 20,
+        "defense": 20,
+        "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
+        "moves": [{"name": "attack", "damage": 10}, {"name": "defend", "damage": 0}]
+    },
+    {
+        "name": "Zombie",
+        "hp": 200,
+        "attack": 10,
+        "defense": 10,
+        "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
+        "moves": [{"name": "attack", "damage": 10}, {"name": "defend", "damage": 0}]
+    },
+    {
+        "name": "Knight",
+        "hp": 300,
+        "attack": 20,
+        "defense": 30,
+        "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
+        "moves": [{"name": "attack", "damage": 10}, {"name": "defend", "damage": 0}]
+    }
+]

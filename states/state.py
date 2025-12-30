@@ -1,6 +1,10 @@
+import pygame
+
+
 class State:
     def __init__(self, game):
         self.game = game
+        self.font = pygame.font.SysFont("comicsans", 40)
 
     def handle_event(self, event):
         pass

@@ -3,6 +3,7 @@ import pygame
 from source.creature import Creature
 
 def load_creature(path):
+
     with open(path, 'r') as json_file:
         data = json.load(json_file)
 

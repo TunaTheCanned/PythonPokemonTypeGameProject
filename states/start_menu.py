@@ -1,3 +1,5 @@
+import math
+
 import pygame
 
 from states.state import State
@@ -14,24 +16,18 @@ class StartMenuState(State):
         super().__init__(game)
 
 
-
-        self.start_button = button.Button("Start Game", "white", "purple",
+        self.start_button = button.Button("Start Game", "white", self.font, "purple",
                                           300, 100, 5,
                                           "black", 5, game.screen, True)
-        self.start_button.set_position(160, 160)
 
-
-        self.load_game_button = button.Button("Load Game", "purple", "yellow",
+        self.load_game_button = button.Button("Load Game", "purple", self.font, "yellow",
                                               300, 100, 5,
                                               "black", 5, game.screen, True)
-        self.load_game_button.set_position(160, 280)
 
-
-        self.leave_game_button = button.Button("Leave Game", "purple", "gray",
+        self.leave_game_button = button.Button("Leave Game", "purple", self.font, "gray",
                                                300, 100, 5,
                                                "black", 5, game.screen, True)
-        self.leave_game_button.set_position(160, 400)
-
+        self.on_resize()
 
     def handle_event(self, event):
         self.start_button.handle_events(event)
@@ -72,6 +68,13 @@ class StartMenuState(State):
         self.leave_game_button.draw()
 
     def on_resize(self):
+        font_size = max(10, int(self.game.get_height() * 0.05))
+        font = pygame.font.SysFont("comicsans", font_size)
+        self.start_button.set_font(font)
+        self.load_game_button.set_font(font)
+        self.leave_game_button.set_font(font)
+
         self.start_button.set_position((self.game.get_width() - self.start_button.width) // 2, self.game.get_height() * 0.3)
         self.load_game_button.set_position((self.game.get_width() - self.load_game_button.width) // 2, self.game.get_height() * 0.45)
         self.leave_game_button.set_position((self.game.get_width() - self.leave_game_button.width) // 2, self.game.get_height() * 0.6)
+

@@ -31,7 +31,7 @@ def darken_color(color, amount):
 
 
 class Button:
-    def __init__(self, text, text_color, button_color, width,
+    def __init__(self, text, text_color, font, button_color, width,
                  height, rounded_border_radius, border_color, border_color_thickness, screen, enabled):
         #in order
         #text = text we want to display on the button
@@ -46,10 +46,10 @@ class Button:
         #screen = where the button is supposed to be drawn, just use "screen", it is our display
         #enabled = if the button is supposed to be enabled or not, it will still show, but enabled = False button will not be able to be clicked
 
-        self.font = pygame.font.SysFont("comicsans", 40)
+
 
         self.text = text
-        # self.font = font
+        self.font = font
         self.text_color = COLOR_MAP[text_color]
         self.button_color = COLOR_MAP[button_color]
         self.width = width
@@ -107,3 +107,7 @@ class Button:
             self.clicked = False
             return True
         return False
+
+    def set_font(self, font):
+        self.font = font
+        self.text_surface = font.render(self.text, True, self.text_color)

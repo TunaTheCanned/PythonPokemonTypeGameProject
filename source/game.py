@@ -6,6 +6,7 @@ from states.message import MessageState
 from states.start_menu import StartMenuState
 from states.playing import PlayingState
 from source.player import Player
+from source.creature_loader import load_creature
 
 class Game:
     def __init__(self, width, height, title):
@@ -22,6 +23,7 @@ class Game:
         self.game_state = None
         self.change_state(GameState.START_MENU)
 
+        self.creatures = load_creature("C:\\dev\\source\\repos\\PythonProject\\creatures.json")
         self.players = [Player("Player 1"), Player("Player 2")]
         self.current_player_index = 0
         self.selected_creature = None
@@ -47,7 +49,7 @@ class Game:
             case GameState.GAME_IS_ACTIVE:
                 self.game_state = PlayingState(self)
             case GameState.CREATURE_SELECTION:
-                self.game_state = CreatureSelectionState(self, 0)
+                self.game_state = CreatureSelectionState(self, self.creatures)
             case GameState.MESSAGE:
                 self.game_state = MessageState(self)
             # case GameState.FIGHTING:

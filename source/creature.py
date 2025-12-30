@@ -1,9 +1,9 @@
 
 class Creature:
-    def __init__(self, name, hp, attack, defense, moves, sprites):
+    def __init__(self, name, hp, attack, defense, moves, sprite):
         self.name = name
         self.hp = hp
         self.attack = attack
         self.defense = defense
         self.moves = moves
-        self.sprites = sprites
+        self.sprite = sprite
