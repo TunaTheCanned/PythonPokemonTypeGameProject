@@ -10,3 +10,6 @@ class State:
 
     def draw(self):
         pass
+
+    def on_resize(self):
+        pass

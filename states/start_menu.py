@@ -1,6 +1,6 @@
 import pygame
 
-from states.state_base import State
+from states.state import State
 from source.game_state import GameState
 from source import button
 import tkinter
@@ -70,3 +70,8 @@ class StartMenuState(State):
         self.start_button.draw()
         self.load_game_button.draw()
         self.leave_game_button.draw()
+
+    def on_resize(self):
+        self.start_button.set_position((self.game.get_width() - self.start_button.width) // 2, self.game.get_height() * 0.3)
+        self.load_game_button.set_position((self.game.get_width() - self.load_game_button.width) // 2, self.game.get_height() * 0.45)
+        self.leave_game_button.set_position((self.game.get_width() - self.leave_game_button.width) // 2, self.game.get_height() * 0.6)

@@ -11,7 +11,7 @@ class Game:
     def __init__(self, width, height, title):
 
         pygame.init()
-        self.screen = pygame.display.set_mode((width, height))
+        self.screen = pygame.display.set_mode((width, height), pygame.RESIZABLE)
         pygame.display.set_caption(title)
 
         self.clock = pygame.time.Clock()
@@ -60,6 +60,10 @@ class Game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+            elif event.type == pygame.VIDEORESIZE:
+                self.screen = pygame.display.set_mode((event.w, event.h), pygame.RESIZABLE)
+                self.renderer.screen = self.screen
+                self.game_state.on_resize()
             else:
                 self.game_state.handle_event(event)
 

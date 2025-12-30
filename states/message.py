@@ -1,6 +1,8 @@
+import pygame
+
 import source.button
 from source.game_state import GameState
-from states.state_base import State
+from states.state import State
 
 class MessageState(State):
     def __init__(self, game):
@@ -16,5 +18,3 @@ class MessageState(State):
     def draw(self):
         self.game.renderer.clear((0,0,0))
         self.game.renderer.draw_centered_text(self.game.message_text)
-
-
