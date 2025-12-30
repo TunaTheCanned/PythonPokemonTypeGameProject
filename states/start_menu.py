@@ -41,18 +41,18 @@ class StartMenuState(State):
             self.game.message_text = "Player 1 Choosing"
             self.game.message_duration = 2.0
             self.game.message_next_state = GameState.CREATURE_SELECTION
-            self.game.current_player_index = 1
+            self.game.current_player_index = 0
             self.game.change_state(GameState.MESSAGE)
 
-        elif self.load_game_button.consume_click():
-            # self.game.change_state(GameState.GAME_IS_ACTIVE)
-            try:
-                tkinter.Tk().withdraw()
-                filepath = filedialog.askopenfilename()
-                load_creature(filepath)
-            except:
-                #TODO make it catch the exception when user tries to open a wrong file
-                print("wrong file extension")
+        # elif self.load_game_button.consume_click():
+        #     # self.game.change_state(GameState.GAME_IS_ACTIVE)
+        #     try:
+        #         tkinter.Tk().withdraw()
+        #         filepath = filedialog.askopenfilename()
+        #         load_creature(filepath)
+        #     except:
+        #         #TODO make it catch the exception when user tries to open a wrong file
+        #         print("wrong file extension")
 
 
         elif self.leave_game_button.consume_click():
@@ -68,7 +68,7 @@ class StartMenuState(State):
         self.leave_game_button.draw()
 
     def on_resize(self):
-        font_size = max(10, int(self.game.get_height() * 0.05))
+        font_size = max(20, int(self.game.get_height() * 0.05))
         font = pygame.font.SysFont("comicsans", font_size)
         self.start_button.set_font(font)
         self.load_game_button.set_font(font)

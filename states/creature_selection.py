@@ -44,17 +44,16 @@ class CreatureSelectionState(State):
             if self.index >= len(self.creatures):
                 self.index = 0
         if self.select_button.consume_click():
-            # player.creature = self.creatures[self.index]
+            self.game.players[self.game.current_player_index].creature = self.creatures[self.index]
             self.game.current_player_index += 1
-            if self.game.current_player_index == 3:
+            if self.game.current_player_index == 2:
                 self.game.message_text = "Fight!"
                 self.game.message_duration = 2.0
-                # self.game.message_next_state = GameState.FIGHTING
-                self.game.message_next_state = GameState.GAME_IS_ACTIVE
+                self.game.message_next_state = GameState.FIGHTING
                 self.game.change_state(GameState.MESSAGE)
             else:
                 self.index = 0
-                self.game.message_text = f"Player {self.game.current_player_index} Choosing"
+                self.game.message_text = f"Player {self.game.current_player_index + 1} Choosing"
                 self.game.message_duration = 2.0
                 self.game.message_next_state = GameState.CREATURE_SELECTION
                 self.game.change_state(GameState.MESSAGE)
@@ -63,10 +62,16 @@ class CreatureSelectionState(State):
     def draw(self):
         self.game.renderer.clear((30, 30, 30))
         creature = self.creatures[self.index]
-        self.game.renderer.draw_image(creature.sprite, (60, 80))
+        self.game.renderer.draw_image(creature.sprite, (60, 120))
 
-        self.game.renderer.draw_text(creature.name, (255, 255, 255), (40, 20))
+        self.game.renderer.draw_text(f"Player {self.game.current_player_index + 1} choosing", (255, 255, 255), (self.game.get_width()/2 - 100, 10))
+        self.game.renderer.draw_text(creature.name, (255, 255, 255), (40, 60))
         self.game.renderer.draw_centered_text(f"Current index: {self.index + 1}")
+        self.game.renderer.draw_text("Attack: " + str(creature.attack), (255, 255, 255), (self.game.get_width()/2 + 100, 140))
+        self.game.renderer.draw_text("Defense: "+str(creature.defense), (255, 255, 255), (self.game.get_width()/2 + 100, 240))
+        self.game.renderer.draw_text("Health: "+str(creature.hp), (255, 255, 255), (self.game.get_width()/2 + 100, 340))
+        # self.game.renderer.draw_text(creature.moves, (255, 255, 255), (self.game.get_width() - 100, self.game.get_height() - 400))
+
         self.left_button.draw()
         self.right_button.draw()
         self.select_button.draw()

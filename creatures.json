@@ -5,7 +5,7 @@
         "attack": 20,
         "defense": 20,
         "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
-        "moves": [{"name": "attack", "damage": 10}, {"name": "defend", "damage": 0}]
+        "moves": ["ATTACK", "IDK"]
     },
     {
         "name": "Zombie",
@@ -13,7 +13,7 @@
         "attack": 10,
         "defense": 10,
         "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
-        "moves": [{"name": "attack", "damage": 10}, {"name": "defend", "damage": 0}]
+        "moves": ["ATTACK", "DEBUG"]
     },
     {
         "name": "Knight",
@@ -21,6 +21,6 @@
         "attack": 20,
         "defense": 30,
         "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
-        "moves": [{"name": "attack", "damage": 10}, {"name": "defend", "damage": 0}]
+        "moves": ["ATTACK", "SHIELD"]
     }
 ]

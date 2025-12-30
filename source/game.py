@@ -2,6 +2,7 @@ import pygame
 from source.game_state import GameState
 from source.renderer import Renderer
 from states.creature_selection import CreatureSelectionState
+from states.fighting import FightingState
 from states.message import MessageState
 from states.start_menu import StartMenuState
 from states.playing import PlayingState
@@ -52,8 +53,8 @@ class Game:
                 self.game_state = CreatureSelectionState(self, self.creatures)
             case GameState.MESSAGE:
                 self.game_state = MessageState(self)
-            # case GameState.FIGHTING:
-            #     self.game_state = PlayingState(self)
+            case GameState.FIGHTING:
+                self.game_state = FightingState(self)
 
 
 
