@@ -21,6 +21,7 @@ class CreatureSelectionState(State):
 
         self.moves_section_title = None
         self.moves_start_y = None
+        self.sprite_size = None
 
         # self.font = pygame.font.SysFont("arial", 40)
         self.font = pygame.font.Font("C:\\dev\\source\\repos\\PythonProject\\Minecraft.ttf", 40)
@@ -61,6 +62,8 @@ class CreatureSelectionState(State):
 
         self.select_button.set_position(int(width * 0.5 - self.select_button.width / 2), int(height - self.select_button.height - height * 0.03))
 
+        self.sprite_size = (int(width * 0.25), int(height * 0.35))
+
 
     def handle_event(self, event):
         self.left_button.handle_events(event)
@@ -97,7 +100,7 @@ class CreatureSelectionState(State):
         self.game.renderer.clear((30, 30, 30))
         creature = self.creatures[self.index]
 
-        self.game.renderer.draw_image(creature.sprite, self.sprite_pos)
+        self.game.renderer.draw_image(creature.sprite, self.sprite_pos, self.sprite_size)
 
         self.game.renderer.draw_text(f"Player {self.game.current_player_index + 1} choosing", (255, 255, 255), self.title_pos)
 

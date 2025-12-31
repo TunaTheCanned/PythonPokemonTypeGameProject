@@ -111,3 +111,10 @@ class Button:
     def set_font(self, font):
         self.font = font
         self.text_surface = font.render(self.text, True, self.text_color)
+
+    def set_size(self, width, height):
+        self.width = width
+        self.height = height
+        center = self.rect.center
+        self.rect.size = (width, height)
+        self.rect.center = center
