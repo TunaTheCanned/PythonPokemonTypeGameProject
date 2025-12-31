@@ -2,7 +2,7 @@
     {
         "name": "Skeleton",
         "hp": 100,
-        "attack": 20,
+        "attack": 60,
         "defense": 20,
         "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
         "moves": ["ATTACK", "IDK"]
@@ -10,7 +10,7 @@
     {
         "name": "Zombie",
         "hp": 200,
-        "attack": 10,
+        "attack": 40,
         "defense": 10,
         "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
         "moves": ["ATTACK", "DEBUG"]
@@ -18,9 +18,9 @@
     {
         "name": "Knight",
         "hp": 300,
-        "attack": 20,
+        "attack": 100,
         "defense": 30,
         "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
-        "moves": ["ATTACK", "SHIELD"]
+        "moves": ["ATTACK", "SHIELD", "DEFEND", "STRIKE"]
     }
 ]

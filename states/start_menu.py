@@ -39,7 +39,7 @@ class StartMenuState(State):
     def update(self, dt):
         if self.start_button.consume_click():
             self.game.message_text = "Player 1 Choosing"
-            self.game.message_duration = 2.0
+            self.game.message_duration = 1.0
             self.game.message_next_state = GameState.CREATURE_SELECTION
             self.game.current_player_index = 0
             self.game.change_state(GameState.MESSAGE)
@@ -68,8 +68,9 @@ class StartMenuState(State):
         self.leave_game_button.draw()
 
     def on_resize(self):
-        font_size = max(20, int(self.game.get_height() * 0.05))
-        font = pygame.font.SysFont("comicsans", font_size)
+        font_size = max(40, int(self.game.get_height() * 0.05))
+        # font = pygame.font.SysFont("comicsans", font_size)
+        font = pygame.font.Font("C:\\dev\\source\\repos\\PythonProject\\Minecraft.ttf", 40)
         self.start_button.set_font(font)
         self.load_game_button.set_font(font)
         self.leave_game_button.set_font(font)
