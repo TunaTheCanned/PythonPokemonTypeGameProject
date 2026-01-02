@@ -1069,3 +1069,221 @@ Turn 17: Zombie attacks for 1 damage
 Turn 18: Knight attacks for 76 damage
 Turn 19: Zombie attacks for 1 damage
 Turn 20: Knight attacks for 76 damage
+
+===============================================
+NEW GAME
+===============================================
+Turn 1: Knight attacks for 90 damage
+Turn 2: Zombie attacks for 10 damage
+Turn 3: Knight attacks for 90 damage
+Turn 4: Zombie attacks for 10 damage
+Turn 5: Knight attacks for 90 damage
+
+===============================================
+NEW GAME
+===============================================
+Turn 1: default case
+Turn 2: Skeleton weakens
+Turn 3: default case
+Turn 4: Skeleton weakens
+Turn 5: default case
+Turn 6: Zombie poisons Skeleton
+Turn 6: Skeleton takes 30 poison damage
+Turn 7: Skeleton attacks for 31 damage
+Turn 8: Zombie poisons Skeleton
+Turn 8: Skeleton takes 30 poison damage
+Turn 8: Skeleton takes 30 poison damage
+Turn 9: Skeleton attacks for 31 damage
+Turn 10: Zombie attacks for 27 damage
+Turn 10: Skeleton takes 30 poison damage
+Turn 10: Skeleton takes 30 poison damage
+
+===============================================
+NEW GAME
+===============================================
+Turn 1: Skeleton attacks for 30 damage
+Turn 2: Knight attacks for 80 damage
+Turn 3: Skeleton attacks for 30 damage
+Turn 4: Knight attacks for 80 damage
+
+===============================================
+NEW GAME
+===============================================
+Turn 1: Knight casts regeneration
+Turn 2: Zombie poisons Knight
+Turn 2: Knight regenerates 10 health points
+Turn 2: Knight takes 30 poison damage
+Turn 3: Knight casts regeneration
+Turn 4: Zombie poisons Knight
+Turn 4: Knight regenerates 10 health points
+Turn 4: Knight takes 30 poison damage
+Turn 4: Knight regenerates 10 health points
+Turn 4: Knight takes 30 poison damage
+Turn 5: Knight casts regeneration
+Turn 6: Zombie poisons Knight
+Turn 6: Knight regenerates 10 health points
+Turn 6: Knight takes 30 poison damage
+Turn 6: Knight regenerates 10 health points
+Turn 6: Knight takes 30 poison damage
+Turn 6: Knight regenerates 10 health points
+Turn 6: Knight takes 30 poison damage
+Turn 7: Knight casts regeneration
+Turn 8: Zombie poisons Knight
+Turn 8: Knight regenerates 10 health points
+Turn 8: Knight regenerates 10 health points
+Turn 8: Knight takes 30 poison damage
+Turn 8: Knight regenerates 10 health points
+Turn 8: Knight takes 30 poison damage
+Turn 8: Knight regenerates 10 health points
+Turn 8: Knight takes 30 poison damage
+Turn 9: Knight casts regeneration
+Turn 10: Zombie poisons Knight
+Turn 10: Knight regenerates 10 health points
+Turn 10: Knight regenerates 10 health points
+Turn 10: Knight regenerates 10 health points
+Turn 10: Knight takes 30 poison damage
+Turn 10: Knight regenerates 10 health points
+Turn 10: Knight takes 30 poison damage
+Turn 10: Knight regenerates 10 health points
+Turn 10: Knight takes 30 poison damage
+Turn 11: Knight casts regeneration
+Turn 12: Zombie poisons Knight
+Turn 12: Knight regenerates 10 health points
+Turn 12: Knight regenerates 10 health points
+Turn 12: Knight regenerates 10 health points
+Turn 12: Knight takes 30 poison damage
+Turn 12: Knight regenerates 10 health points
+Turn 12: Knight takes 30 poison damage
+Turn 12: Knight regenerates 10 health points
+Turn 12: Knight takes 30 poison damage
+Turn 13: Knight casts regeneration
+Turn 14: Zombie poisons Knight
+Turn 14: Knight regenerates 10 health points
+Turn 14: Knight regenerates 10 health points
+Turn 14: Knight regenerates 10 health points
+Turn 14: Knight takes 30 poison damage
+Turn 14: Knight regenerates 10 health points
+Turn 14: Knight takes 30 poison damage
+Turn 14: Knight regenerates 10 health points
+Turn 14: Knight takes 30 poison damage
+
+===============================================
+NEW GAME
+===============================================
+Turn 1: Knight casts regeneration
+Turn 2: Zombie poisons Knight
+Turn 2: Knight regenerates 10 health points
+Turn 2: Knight takes 30 poison damage
+Turn 3: Knight casts regeneration
+Turn 4: Zombie poisons Knight
+Turn 4: Knight regenerates 10 health points
+Turn 4: Knight takes 30 poison damage
+Turn 4: Knight regenerates 10 health points
+Turn 4: Knight takes 30 poison damage
+Turn 5: Knight casts regeneration
+Turn 6: Zombie poisons Knight
+Turn 6: Knight regenerates 10 health points
+Turn 6: Knight takes 30 poison damage
+Turn 6: Knight regenerates 10 health points
+Turn 6: Knight takes 30 poison damage
+Turn 6: Knight regenerates 10 health points
+Turn 6: Knight takes 30 poison damage
+Turn 7: Knight casts regeneration
+Turn 8: Zombie poisons Knight
+Turn 8: Knight regenerates 10 health points
+Turn 8: Knight regenerates 10 health points
+Turn 8: Knight takes 30 poison damage
+Turn 8: Knight regenerates 10 health points
+Turn 8: Knight takes 30 poison damage
+Turn 8: Knight regenerates 10 health points
+Turn 8: Knight takes 30 poison damage
+Turn 9: Knight casts regeneration
+Turn 10: Zombie poisons Knight
+Turn 10: Knight regenerates 10 health points
+Turn 10: Knight regenerates 10 health points
+Turn 10: Knight regenerates 10 health points
+Turn 10: Knight takes 30 poison damage
+Turn 10: Knight regenerates 10 health points
+Turn 10: Knight takes 30 poison damage
+Turn 10: Knight regenerates 10 health points
+Turn 10: Knight takes 30 poison damage
+Turn 11: Knight casts regeneration
+Turn 12: Zombie poisons Knight
+Turn 12: Knight regenerates 10 health points
+Turn 12: Knight regenerates 10 health points
+Turn 12: Knight regenerates 10 health points
+Turn 12: Knight takes 30 poison damage
+Turn 12: Knight regenerates 10 health points
+Turn 12: Knight takes 30 poison damage
+Turn 12: Knight regenerates 10 health points
+Turn 12: Knight takes 30 poison damage
+Turn 13: Knight casts regeneration
+Turn 14: Zombie poisons Knight
+Turn 14: Knight regenerates 10 health points
+Turn 14: Knight regenerates 10 health points
+Turn 14: Knight regenerates 10 health points
+Turn 14: Knight takes 30 poison damage
+Turn 14: Knight regenerates 10 health points
+Turn 14: Knight takes 30 poison damage
+Turn 14: Knight regenerates 10 health points
+Turn 14: Knight takes 30 poison damage
+
+===============================================
+NEW GAME
+===============================================
+Turn 1: Knight attacks for 70 damage
+Turn 2: Knight casts regeneration
+Turn 3: Knight attacks for 70 damage
+Turn 3: Knight regenerates 10 health points
+Turn 4: Knight casts regeneration
+Turn 5: Knight attacks for 70 damage
+Turn 5: Knight regenerates 10 health points
+Turn 5: Knight regenerates 10 health points
+Turn 6: Knight casts regeneration
+Turn 7: Knight attacks for 70 damage
+Turn 7: Knight regenerates 10 health points
+Turn 7: Knight regenerates 10 health points
+Turn 7: Knight regenerates 10 health points
+Turn 8: Knight casts regeneration
+Turn 9: Knight attacks for 70 damage
+Turn 9: Knight regenerates 10 health points
+Turn 9: Knight regenerates 10 health points
+Turn 9: Knight regenerates 10 health points
+Turn 9: Knight regenerates 10 health points
+Turn 10: Knight casts regeneration
+Turn 11: Knight attacks for 70 damage
+Turn 11: Knight regenerates 10 health points
+Turn 11: Knight regenerates 10 health points
+Turn 11: Knight regenerates 10 health points
+Turn 11: Knight regenerates 10 health points
+Turn 11: Knight regenerates 10 health points
+
+===============================================
+NEW GAME
+===============================================
+Turn 1: Knight attacks for 70 damage
+Turn 2: Knight casts regeneration
+Turn 3: Knight attacks for 70 damage
+Turn 3: Knight regenerates 10 health points
+Turn 4: Knight casts regeneration
+Turn 5: Knight attacks for 70 damage
+Turn 5: Knight regenerates 10 health points
+Turn 5: Knight regenerates 10 health points
+Turn 6: Knight casts regeneration
+Turn 7: Knight attacks for 70 damage
+Turn 7: Knight regenerates 10 health points
+Turn 7: Knight regenerates 10 health points
+Turn 7: Knight regenerates 10 health points
+Turn 8: Knight casts regeneration
+Turn 9: Knight attacks for 70 damage
+Turn 9: Knight regenerates 10 health points
+Turn 9: Knight regenerates 10 health points
+Turn 9: Knight regenerates 10 health points
+Turn 9: Knight regenerates 10 health points
+Turn 10: Knight casts regeneration
+Turn 11: Knight attacks for 70 damage
+Turn 11: Knight regenerates 10 health points
+Turn 11: Knight regenerates 10 health points
+Turn 11: Knight regenerates 10 health points
+Turn 11: Knight regenerates 10 health points
+Turn 11: Knight regenerates 10 health points

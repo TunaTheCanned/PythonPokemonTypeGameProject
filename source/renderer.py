@@ -2,10 +2,10 @@ import pygame
 
 
 class Renderer:
-    def __init__(self, screen):
+    def __init__(self, screen, font):
         self.screen = screen
         # self.font = pygame.font.SysFont("arial", 40)
-        self.font = pygame.font.Font("resources/Minecraft.ttf", 40)
+        self.font = font
 
     def clear(self, color=(0, 0, 0)):
         self.screen.fill(color)

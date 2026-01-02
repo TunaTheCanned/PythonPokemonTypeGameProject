@@ -1,4 +1,4 @@
-import logging
+
 
 import pygame
 
@@ -15,8 +15,6 @@ class FightingState(State):
         self.current_turn = 0
         self.turns = 1
         self.move_buttons = []
-        # self.font = pygame.font.SysFont("arial", 40)
-        self.font = pygame.font.Font("resources/Minecraft.ttf", 40)
 
         self.p1_sprite_pos = None
         self.p2_sprite_pos = None

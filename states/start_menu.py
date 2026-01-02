@@ -72,7 +72,7 @@ class StartMenuState(State):
     def on_resize(self):
         font_size = max(40, int(self.game.get_height() * 0.05))
         # font = pygame.font.SysFont("comicsans", font_size)
-        self.font = pygame.font.Font("resources/Minecraft.ttf", 40)
+
         self.start_button.set_font(self.font)
         # self.load_game_button.set_font(self.font)
         self.leave_game_button.set_font(self.font)

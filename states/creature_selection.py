@@ -24,7 +24,6 @@ class CreatureSelectionState(State):
         self.sprite_size = None
 
         # self.font = pygame.font.SysFont("arial", 40)
-        self.font = pygame.font.Font("resources/Minecraft.ttf", 40)
 
         self.left_button = source.button.Button("<<", "black", self.font,"white",
                                           100, 100, 5,
@@ -47,14 +46,15 @@ class CreatureSelectionState(State):
     def update_layout(self):
         width = self.game.screen.get_width()
         height = self.game.screen.get_height()
-        self.sprite_pos = int((width * 0.05)), int((height * 0.1))
+
         self.title_pos = int((width * 0.5 - 150)), int((height * 0.05))
-        self.name_pos = int((width * 0.05)), int((height * 0.01))
+        self.name_pos = int((width * 0.05)), int((height * 0.05))
         self.stats_x = int((width * 0.55))
         self.stats_y = int((height * 0.1))
         self.stats_spacing = int((height * 0.08))
+        self.sprite_pos = int((width * 0.05)), int((height * 0.1) + self.stats_spacing)
 
-        self.moves_section_title = (self.stats_x, self.stats_y + self.stats_spacing * 4)
+        self.moves_section_title = (self.stats_x, self.stats_y + self.stats_spacing * 5)
         self.moves_start_y = self.moves_section_title[1] + self.stats_spacing
 
         self.left_button.set_position(int(width * 0.02), int(height -self.left_button.height - height * 0.03))

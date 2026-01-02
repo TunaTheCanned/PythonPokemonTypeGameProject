@@ -13,13 +13,14 @@ class Game:
     def __init__(self, width, height, title):
 
         pygame.init()
+        self.font = pygame.font.Font("resources/Minecraft.ttf", 40)
         self.screen = pygame.display.set_mode((width, height), pygame.RESIZABLE)
         pygame.display.set_caption(title)
 
         self.clock = pygame.time.Clock()
         self.running = True
 
-        self.renderer = Renderer(self.screen)
+        self.renderer = Renderer(self.screen, self.font)
 
         self.game_state = None
         self.change_state(GameState.START_MENU)

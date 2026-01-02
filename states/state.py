@@ -5,7 +5,7 @@ class State:
     def __init__(self, game):
         self.game = game
         # self.font = pygame.font.SysFont("arial", 40)
-        self.font = pygame.font.Font("resources/Minecraft.ttf", 40)
+        self.font = game.font
 
     def handle_event(self, event):
         pass
