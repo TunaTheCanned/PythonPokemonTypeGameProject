@@ -20,7 +20,7 @@ def load_creature(path):
     for creature in data:
         try:
             sprite = pygame.image.load(creature['sprite']).convert_alpha()
-            creatures.append(Creature(creature['name'], creature['hp'], creature['attack'], creature['defense'], creature['moves'], sprite))
+            creatures.append(Creature(creature['name'], creature['hp'], creature['attack'], creature['defense'], creature['evasion'], creature['moves'], sprite))
         except FileNotFoundError:
             print(f"{creature['sprite']}: not found")
 

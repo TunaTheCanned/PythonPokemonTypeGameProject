@@ -86,6 +86,7 @@ class FightingState(State):
 
         self.log_message = [result]
         self.log_timer = self.log_duration
+        self.turns += 1
         self.end_turn()
 
     def handle_event(self, event):
@@ -110,7 +111,6 @@ class FightingState(State):
                 print(f"status effect log failed: {e}")
 
         self.current_turn = 1 - self.current_turn
-        self.turns += 1
         self.update_move_buttons()
 
     def update(self, dt):
@@ -170,13 +170,15 @@ class FightingState(State):
         self.draw_healthbar(player2, *self.p2_hp_pos)
 
         line_gap = int(self.game.get_height() * 0.06)
-        self.game.renderer.draw_text("Attack: " + str(player1.attack), (255, 255, 255), (self.p1_stats_x, self.p1_stats_y))
-        self.game.renderer.draw_text("Defense: " + str(player1.defense), (255, 255, 255), (self.p1_stats_x, self.p1_stats_y + line_gap))
-        self.game.renderer.draw_text("Health: " + str(player1.hp), (255, 255, 255), (self.p1_stats_x, self.p1_stats_y + 2*line_gap))
+        self.game.renderer.draw_text("Health: " + str(player1.hp), (255, 255, 255), (self.p1_stats_x, self.p1_stats_y))
+        self.game.renderer.draw_text("Attack: " + str(player1.attack), (255, 255, 255), (self.p1_stats_x, self.p1_stats_y + line_gap))
+        self.game.renderer.draw_text("Defense: " + str(player1.defense), (255, 255, 255), (self.p1_stats_x, self.p1_stats_y + 2*line_gap))
+        self.game.renderer.draw_text("Evasion: " + str(player1.evasion), (255, 255, 255), (self.p1_stats_x, self.p1_stats_y + 3 * line_gap))
 
-        self.game.renderer.draw_text("Attack: " + str(player2.attack), (255, 255, 255), (self.p2_stats_x, self.p2_stats_y))
-        self.game.renderer.draw_text("Defense: " + str(player2.defense), (255, 255, 255), (self.p2_stats_x, self.p2_stats_y + line_gap))
-        self.game.renderer.draw_text("Health: " + str(player2.hp), (255, 255, 255), (self.p2_stats_x, self.p2_stats_y + 2*line_gap))
+        self.game.renderer.draw_text("Health: " + str(player2.hp), (255, 255, 255), (self.p2_stats_x, self.p2_stats_y))
+        self.game.renderer.draw_text("Attack: " + str(player2.attack), (255, 255, 255), (self.p2_stats_x, self.p2_stats_y + line_gap))
+        self.game.renderer.draw_text("Defense: " + str(player2.defense), (255, 255, 255), (self.p2_stats_x, self.p2_stats_y + 2*line_gap))
+        self.game.renderer.draw_text("Evasion: " + str(player2.evasion), (255, 255, 255), (self.p2_stats_x, self.p2_stats_y + 3*line_gap))
 
         self.game.renderer.draw_text(f"Player {self.current_turn + 1} turn", (255, 255, 255), self.turn_text_pos)
 

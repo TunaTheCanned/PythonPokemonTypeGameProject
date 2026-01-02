@@ -112,6 +112,7 @@ class CreatureSelectionState(State):
         self.game.renderer.draw_text("Attack: " + str(creature.attack), (255, 255, 255), (self.stats_x, self.stats_y + 1 * self.stats_spacing))
         self.game.renderer.draw_text("Defense: "+str(creature.defense), (255, 255, 255), (self.stats_x, self.stats_y + 2 * self.stats_spacing))
         self.game.renderer.draw_text("Health: "+str(creature.hp), (255, 255, 255), (self.stats_x, self.stats_y + 3 * self.stats_spacing))
+        self.game.renderer.draw_text("Evasion: " + str(creature.evasion), (255, 255, 255), (self.stats_x, self.stats_y + 4 * self.stats_spacing))
 
         for i, move in enumerate(creature.moves):
             move_name = str(move)
