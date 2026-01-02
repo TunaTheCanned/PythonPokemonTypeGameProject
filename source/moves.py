@@ -22,8 +22,12 @@ def perform_move(move_name, attacker, defender):
             return f"{attacker.name} adopts a fighting stance"
 
         case "POISON":
-            defender.status_effects.append({"type": "POISON", "damage": 10, "turns_left": 3})
+            defender.status_effects.append({"type": "POISON", "damage": 30, "turns_left": 3})
             return f"{attacker.name} poisons {defender.name}"
+
+        case "REGENERATION":
+            attacker.status_effects.append({"type": "REGENERATION", "damage": 10, "turns_left": 5})
+            return f"{attacker.name} casts regeneration"
 
         case _:
             return "default case"

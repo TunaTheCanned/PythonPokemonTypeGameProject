@@ -129,8 +129,17 @@ class FightingState(State):
                 creature -= effect["damage"]
                 if creature.hp <= 0:
                     self.game_over()
-                effect["turns_left"] -= 1
                 messages.append(f"{creature.name} takes {effect['damage']} poison damage")
+
+            elif effect["type"] == "REGENERATION":
+                creature += effect["damage"]
+                if creature.hp > creature.max_hp:
+                    creature.hp = creature.max_hp
+                messages.append(f"{creature.name} regenerates {effect["damage"]} health points")
+
+            effect["turns_left"] -= 1
+            if effect["turns_left"] <= 0:
+                creature.status_effects.remove(effect)
 
         return messages
 

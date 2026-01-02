@@ -21,6 +21,6 @@
         "attack": 100,
         "defense": 30,
         "sprite": "resources/placeholder.png",
-        "moves": ["ATTACK", "FIGHTING STANCE", "DEFEND", "STRIKE"]
+        "moves": ["ATTACK", "FIGHTING STANCE", "DEFEND", "REGENERATION"]
     }
 ]
