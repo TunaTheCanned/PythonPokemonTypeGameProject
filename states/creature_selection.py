@@ -24,7 +24,7 @@ class CreatureSelectionState(State):
         self.sprite_size = None
 
         # self.font = pygame.font.SysFont("arial", 40)
-        self.font = pygame.font.Font("C:\\dev\\source\\repos\\PythonProject\\Minecraft.ttf", 40)
+        self.font = pygame.font.Font("resources/Minecraft.ttf", 40)
 
         self.left_button = source.button.Button("<<", "black", self.font,"white",
                                           100, 100, 5,

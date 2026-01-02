@@ -24,7 +24,7 @@ class Game:
         self.game_state = None
         self.change_state(GameState.START_MENU)
 
-        self.creatures = load_creature("C:\\dev\\source\\repos\\PythonProject\\creatures.json")
+        self.creatures = load_creature("resources/creatures.json")
         self.players = [Player("Player 1"), Player("Player 2")]
         self.current_player_index = 0
         self.selected_creature = None

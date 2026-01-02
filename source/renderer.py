@@ -5,7 +5,7 @@ class Renderer:
     def __init__(self, screen):
         self.screen = screen
         # self.font = pygame.font.SysFont("arial", 40)
-        self.font = pygame.font.Font("C:\\dev\\source\\repos\\PythonProject\\Minecraft.ttf", 40)
+        self.font = pygame.font.Font("resources/Minecraft.ttf", 40)
 
     def clear(self, color=(0, 0, 0)):
         self.screen.fill(color)

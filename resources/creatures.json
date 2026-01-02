@@ -4,7 +4,7 @@
         "hp": 100,
         "attack": 60,
         "defense": 20,
-        "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
+        "sprite": "resources/placeholder.png",
         "moves": ["ATTACK", "IDK"]
     },
     {
@@ -12,15 +12,15 @@
         "hp": 200,
         "attack": 40,
         "defense": 10,
-        "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
-        "moves": ["ATTACK", "DEBUG"]
+        "sprite": "resources/placeholder.png",
+        "moves": ["ATTACK", "WEAKEN", "DEFEND", "POISON"]
     },
     {
         "name": "Knight",
         "hp": 300,
         "attack": 100,
         "defense": 30,
-        "sprite": "C:\\dev\\source\\repos\\PythonProject\\placeholder.png",
-        "moves": ["ATTACK", "SHIELD", "DEFEND", "STRIKE"]
+        "sprite": "resources/placeholder.png",
+        "moves": ["ATTACK", "FIGHTING STANCE", "DEFEND", "STRIKE"]
     }
 ]
