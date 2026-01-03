@@ -1,29 +1,111 @@
 [
-    {
-        "name": "Skeleton",
+        {
+        "name": "Dyniak",
         "hp": 100,
-        "attack": 60,
+        "attack": 150,
         "defense": 20,
-        "evasion": 25,
-        "sprite": "resources/placeholder.png",
-        "moves": ["ATTACK", "IDK"]
-    },
-    {
-        "name": "Zombie",
-        "hp": 400,
-        "attack": 40,
-        "defense": 10,
         "evasion": 5,
-        "sprite": "resources/placeholder.png",
-        "moves": ["ATTACK", "WEAKEN", "DEFEND", "POISON"]
+        "sprite": "resources/creatures/dynia.png",
+        "moves": ["ATTACK", "WEAKEN", "DEFEND"]
     },
-    {
-        "name": "Knight",
+        {
+        "name": "Gwiazdobiorog",
         "hp": 300,
         "attack": 100,
         "defense": 30,
         "evasion": 15,
-        "sprite": "resources/placeholder.png",
+        "sprite": "resources/creatures/gwiazda.png",
         "moves": ["ATTACK", "FIGHTING STANCE", "DEFEND", "REGENERATION"]
+    },
+        {
+        "name": "Kosmityczny",
+        "hp": 400,
+        "attack": 50,
+        "defense": 20,
+        "evasion": 25,
+        "sprite": "resources/creatures/kosmita.png",
+        "moves": ["ATTACK", "WEAKEN","POISON"]
+    },
+        {
+        "name": "Dziadolong",
+        "hp": 400,
+        "attack": 30,
+        "defense": 20,
+        "evasion": 25,
+        "sprite": "resources/creatures/kulka.png",
+        "moves": ["ATTACK", "WEAKEN","POISON","REGENERATION"]
+    },
+        {
+        "name": "Teletubisiowaty",
+        "hp": 400,
+        "attack": 50,
+        "defense": 20,
+        "evasion": 10,
+        "sprite": "resources/creatures/misiek.png",
+        "moves": ["ATTACK", "WEAKEN", "FIGHTING STANCE"]
+    },
+        {
+        "name": "Osmiorniczny",
+        "hp": 600,
+        "attack": 20,
+        "defense": 50,
+        "evasion": 40,
+        "sprite": "resources/creatures/osmiornik.png",
+        "moves": ["ATTACK", "WEAKEN","POISON"]
+    },
+        {
+        "name": "Paprykarz",
+        "hp": 300,
+        "attack": 60,
+        "defense": 5,
+        "evasion": 10,
+        "sprite": "resources/creatures/papryka.png",
+        "moves": ["ATTACK", "DEFEND","WEAKEN"]
+    },
+        {
+        "name": "Kwiatoludny",
+        "hp": 400,
+        "attack": 20,
+        "defense": 30,
+        "evasion": 20,
+        "sprite": "resources/creatures/roslina.png",
+        "moves": ["ATTACK", "FIGHTING STANCE","POISON"]
+    },
+        {
+        "name": "Scarry",
+        "hp": 500,
+        "attack": 100,
+        "defense": 10,
+        "evasion": 15,
+        "sprite": "resources/creatures/straszny.png",
+        "moves": ["ATTACK", "FIGHTING STANCE", "DEFEND", "REGENERATION"]
+    },
+        {
+        "name": "Ufoludowaty",
+        "hp": 300,
+        "attack": 50,
+        "defense": 30,
+        "evasion": 40,
+        "sprite": "resources/creatures/ufolud.png",
+        "moves": ["ATTACK", "WEAKEN","POISON", "FIGHTING STANCE"]
+    },
+        {
+        "name": "Owirusowaty",
+        "hp": 500,
+        "attack": 40,
+        "defense": 10,
+        "evasion": 20,
+        "sprite": "resources/creatures/wirus.png",
+        "moves": ["ATTACK", "WEAKEN","POISON"]
+    },
+        {
+        "name": "Wruszkoblady",
+        "hp": 400,
+        "attack": 40,
+        "defense": 5,
+        "evasion": 10,
+        "sprite": "resources/creatures/wrozka.png",
+        "moves": ["ATTACK", "WEAKEN","POISON", "DEFEND"]
     }
 ]
+

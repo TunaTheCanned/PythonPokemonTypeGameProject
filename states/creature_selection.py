@@ -12,6 +12,11 @@ class CreatureSelectionState(State):
 
         self.creatures = creatures
         self.index = 0
+        try:
+            self.bg_original = pygame.image.load("resources/background_creatures.png").convert()
+        except FileNotFoundError:
+            print("Error: File not found")
+            self.bg_original = None
         self.sprite_pos = None
         self.title_pos = None
         self.name_pos = None
@@ -46,6 +51,9 @@ class CreatureSelectionState(State):
     def update_layout(self):
         width = self.game.screen.get_width()
         height = self.game.screen.get_height()
+
+        if self.bg_original:
+            self.bg_scaled = pygame.transform.scale(self.bg_original, (width, height))
 
         self.title_pos = int((width * 0.5 - 150)), int((height * 0.05))
         self.name_pos = int((width * 0.05)), int((height * 0.05))
@@ -97,7 +105,11 @@ class CreatureSelectionState(State):
 
 
     def draw(self):
-        self.game.renderer.clear((30, 30, 30))
+        if self.bg_scaled:
+            self.game.screen.blit(self.bg_scaled, (0, 0))
+        else:
+            self.game.renderer.clear((30, 30, 30))
+        #self.game.renderer.clear((30, 30, 30))
         creature = self.creatures[self.index]
 
         self.game.renderer.draw_image(creature.sprite, self.sprite_pos, self.sprite_size)

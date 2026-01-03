@@ -11,6 +11,11 @@ class FightingState(State):
     def __init__(self, game):
         super().__init__(game)
 
+        try:
+            self.bg_image = pygame.image.load("resources/background_fight.png").convert()
+        except FileNotFoundError:
+            print("Error: File not found")
+            self.bg_image = None
 
         self.current_turn = 0
         self.turns = 1
@@ -133,7 +138,7 @@ class FightingState(State):
                 creature += effect["damage"]
                 if creature.hp > creature.max_hp:
                     creature.hp = creature.max_hp
-                messages.append(f"{creature.name} regenerates {effect["damage"]} health points")
+                messages.append(f"{creature.name} regenerates {effect['damage']} health points")
 
             effect["turns_left"] -= 1
             if effect["turns_left"] <= 0:
@@ -154,7 +159,12 @@ class FightingState(State):
 
 
     def draw(self):
-        self.game.renderer.clear((60, 60, 60))
+        if self.bg_image:
+            self.game.renderer.draw_image(self.bg_image, (0, 0),
+                                          (self.game.get_width(), self.game.get_height()))
+        else:
+            self.game.renderer.clear((60, 60, 60))
+        #self.game.renderer.clear((60, 60, 60))
 
         player1 = self.game.players[0].creature
         player2 = self.game.players[1].creature

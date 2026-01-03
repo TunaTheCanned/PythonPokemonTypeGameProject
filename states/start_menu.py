@@ -16,7 +16,11 @@ class StartMenuState(State):
     def __init__(self, game):
         super().__init__(game)
 
-
+        try:
+            self.bg_image = pygame.image.load("resources/background_menu.png").convert()
+        except FileNotFoundError:
+            print("Error: File not found")
+            self.bg_image = None
 
         self.start_button = button.Button("Start Game", "white", self.font, "purple",
                                           300, 100, 5,
@@ -63,7 +67,12 @@ class StartMenuState(State):
 
 
     def draw(self):
-        self.game.renderer.clear((100, 0, 0))
+        if self.bg_image:
+            self.game.renderer.draw_image(self.bg_image, (0, 0),
+                                          (self.game.get_width(), self.game.get_height()))
+        else:
+            self.game.renderer.clear((100, 0, 0))
+        #self.game.renderer.clear((100, 0, 0))
 
         self.start_button.draw()
         # self.load_game_button.draw()
