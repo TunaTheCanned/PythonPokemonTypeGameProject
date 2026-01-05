@@ -39,6 +39,9 @@ class FightingState(State):
         self.p2_stats_x = None
         self.p1_stats_y = None
         self.p2_stats_y = None
+        self.player_name_y = None
+        self.p1_name_pos = None
+        self.p2_name_pos = None
 
         for i in range(4):
             btn = button.Button("", "black", self.font, "white",
@@ -192,6 +195,9 @@ class FightingState(State):
 
         self.game.renderer.draw_text(f"Player {self.current_turn + 1} turn", (255, 255, 255), self.turn_text_pos)
 
+        self.game.renderer.draw_text(f"Player 1", (255, 255, 255), self.p1_name_pos)
+        self.game.renderer.draw_text(f"Player 2", (255, 255, 255), self.p2_name_pos)
+
         if self.log_timer > 0 and self.log_message:
             x, y = self.log_pos
             spacing = int(self.game.get_width() * 0.04)
@@ -209,8 +215,11 @@ class FightingState(State):
         left_x = int(width *0.05)
         right_x = int(width * 0.95 - sprite_w)
         sprite_y = int(height * 0.15)
+        player_name_y = int (height * 0.1)
         self.p1_sprite_pos = (left_x, sprite_y)
         self.p2_sprite_pos = (right_x, sprite_y)
+        self.p1_name_pos = (left_x, player_name_y)
+        self.p2_name_pos = (right_x, player_name_y)
 
         bar_offset = int(height * 0.1)
         stats_offset = int(height * 0.05)
