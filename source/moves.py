@@ -37,5 +37,24 @@ def perform_move(move_name, attacker, defender):
             attacker.status_effects.append({"type": "REGENERATION", "damage": 10, "turns_left": 5})
             return f"{attacker.name} casts regeneration"
 
+        case "SCARE":
+            if dodged(defender):
+                return f"{defender.name} is not scared"
+            defender.attack = max(1, defender.attack - 8)
+            return f"{attacker.name} scares {defender.name} (Attack Down!)"
+
+        case "DRAIN":
+            damage = int(attacker.attack * 0.2)
+            defender.hp -= damage
+            attacker.hp += damage
+            if attacker.hp > attacker.max_hp: attacker.hp = attacker.max_hp
+            return f"{attacker.name} drains {damage} HP from {defender.name}"
+
+        case "CURSE":
+            if dodged(defender):
+                return f"{defender.name} avoided the curse"
+            defender.defense -= 10
+            return f"{defender.name} is now cursed (Defense down!)"
+
         case _:
             return "default case"
