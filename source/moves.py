@@ -14,7 +14,7 @@ def perform_move(move_name, attacker, defender):
             return f"{attacker.name} attacks for {damage} damage"
 
         case "DEFEND":
-            attacker.defense += 2
+            attacker.defense += 10
             return f"{attacker.name} raises his defense"
 
         case "WEAKEN":
@@ -23,7 +23,7 @@ def perform_move(move_name, attacker, defender):
             defender /= 1.2
             return f"{defender.name} weakens"
 
-        case "FIGHTING STANCE":
+        case "STRENGTH":
             attacker *= 1.1
             return f"{attacker.name} adopts a fighting stance"
 
@@ -33,7 +33,7 @@ def perform_move(move_name, attacker, defender):
             defender.status_effects.append({"type": "POISON", "damage": 30, "turns_left": 3})
             return f"{attacker.name} poisons {defender.name}"
 
-        case "REGENERATION":
+        case "REGEN":
             attacker.status_effects.append({"type": "REGENERATION", "damage": 10, "turns_left": 5})
             return f"{attacker.name} casts regeneration"
 
@@ -41,7 +41,7 @@ def perform_move(move_name, attacker, defender):
             if dodged(defender):
                 return f"{defender.name} is not scared"
             defender.attack = max(1, defender.attack - 8)
-            return f"{attacker.name} scares {defender.name} (Attack Down!)"
+            return f"{attacker.name} scares {defender.name}"
 
         case "DRAIN":
             damage = int(attacker.attack * 0.2)
@@ -54,7 +54,7 @@ def perform_move(move_name, attacker, defender):
             if dodged(defender):
                 return f"{defender.name} avoided the curse"
             defender.defense -= 10
-            return f"{defender.name} is now cursed (Defense down!)"
+            return f"{defender.name} is now cursed"
 
         case _:
             return "default case"

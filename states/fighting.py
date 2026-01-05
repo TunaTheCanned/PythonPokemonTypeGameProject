@@ -199,7 +199,7 @@ class FightingState(State):
             x, y = self.log_pos
             spacing = int(self.game.get_width() * 0.04)
             for i, msg in enumerate(self.log_message):
-                self.game.renderer.draw_text(msg, (255, 255, 255), (x, y + i * spacing))
+                self.game.renderer.draw_small_text(msg, 25,(x, y + i * spacing))
 
         for btn in self.move_buttons:
             btn.draw()
