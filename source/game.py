@@ -5,7 +5,6 @@ from states.creature_selection import CreatureSelectionState
 from states.fighting import FightingState
 from states.message import MessageState
 from states.start_menu import StartMenuState
-from states.playing import PlayingState
 from source.player import Player
 from source.creature_loader import load_creature
 
@@ -48,8 +47,6 @@ class Game:
         match state:
             case GameState.START_MENU:
                 self.game_state = StartMenuState(self)
-            case GameState.GAME_IS_ACTIVE:
-                self.game_state = PlayingState(self)
             case GameState.CREATURE_SELECTION:
                 self.game_state = CreatureSelectionState(self, self.creatures)
             case GameState.MESSAGE:
@@ -70,17 +67,6 @@ class Game:
                 self.game_state.on_resize()
             else:
                 self.game_state.handle_event(event)
-
-
-
-
-    # def render(self):
-    #     self.screen.fill((0, 0, 0))
-    #     self.renderer.draw()
-    #     #self.renderer.draw_text()
-    #     self.screen.display.update()
-
-
 
 
     def run(self):
