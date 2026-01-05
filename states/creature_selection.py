@@ -1,5 +1,3 @@
-import math
-
 import pygame
 
 import source.button
@@ -28,22 +26,17 @@ class CreatureSelectionState(State):
         self.moves_start_y = None
         self.sprite_size = None
 
-        # self.font = pygame.font.SysFont("arial", 40)
-
         self.left_button = source.button.Button("<<", "black", self.font,"white",
                                           100, 100, 5,
                                           "black", 5, game.screen, True)
-        # self.left_button.set_position(20, (game.get_height()-self.left_button.height)-20)
 
         self.right_button = source.button.Button(">>", "black", self.font, "white",
                                                  100, 100, 5,
                                                  "black", 5, game.screen, True)
-        # self.right_button.set_position(game.get_width() - self.right_button.width - 20, (game.get_height() - self.right_button.height) - 20)
 
         self.select_button = source.button.Button("Choose", "black", self.font, "white",
                                                   300, 100, 5,
                                                   "black", 5, game.screen, True)
-        # self.select_button.set_position((game.get_width()-self.select_button.width) / 2, (game.get_height()-self.select_button.height) - 20)
 
         self.update_layout()
 
@@ -109,16 +102,11 @@ class CreatureSelectionState(State):
             self.game.screen.blit(self.bg_scaled, (0, 0))
         else:
             self.game.renderer.clear((30, 30, 30))
-        #self.game.renderer.clear((30, 30, 30))
         creature = self.creatures[self.index]
 
         self.game.renderer.draw_image(creature.sprite, self.sprite_pos, self.sprite_size)
-
         self.game.renderer.draw_text(f"Player {self.game.current_player_index + 1} choosing", (255, 255, 255), self.title_pos)
-
         self.game.renderer.draw_text(creature.name, (255, 255, 255), self.name_pos)
-
-        # self.game.renderer.draw_centered_text(f"Current index: {self.index + 1}")
 
         self.game.renderer.draw_text("Moves:", (255, 255, 255), self.moves_section_title)
         self.game.renderer.draw_text("Attack: " + str(creature.attack), (255, 255, 255), (self.stats_x, self.stats_y + 1 * self.stats_spacing))
@@ -143,14 +131,4 @@ class CreatureSelectionState(State):
 
     def on_resize(self):
         self.update_layout()
-
-        # font_size = max(40, int(self.game.get_height() * 0.05))
-        # font = pygame.font.SysFont("comicsans", font_size)
-        # self.left_button.set_font(font)
-        # self.right_button.set_font(font)
-        # self.select_button.set_font(font)
-
-        # self.left_button.set_position(20, (self.game.get_height() - self.left_button.height) - 20)
-        # self.right_button.set_position(self.game.get_width() - self.right_button.width - 20, (self.game.get_height() - self.right_button.height) - 20)
-        # self.select_button.set_position((self.game.get_width()-self.select_button.width) / 2, (self.game.get_height()-self.select_button.height) - 20)
 

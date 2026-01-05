@@ -1,7 +1,3 @@
-import pygame
-
-import source.button
-from source.game_state import GameState
 from states.state import State
 
 class MessageState(State):

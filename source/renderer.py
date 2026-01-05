@@ -4,7 +4,6 @@ import pygame
 class Renderer:
     def __init__(self, screen, font):
         self.screen = screen
-        # self.font = pygame.font.SysFont("arial", 40)
         self.font = font
 
     def clear(self, color=(0, 0, 0)):
