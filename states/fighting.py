@@ -1,5 +1,3 @@
-
-
 import pygame
 
 from source import button
@@ -167,7 +165,6 @@ class FightingState(State):
                                           (self.game.get_width(), self.game.get_height()))
         else:
             self.game.renderer.clear((60, 60, 60))
-        #self.game.renderer.clear((60, 60, 60))
 
         player1 = self.game.players[0].creature
         player2 = self.game.players[1].creature

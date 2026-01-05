@@ -1,7 +1,6 @@
 import pygame
 
-#dictionary mapping color names to rgb values. we using a dict here !! :DDD !!!!
-#TODO add more colors
+#dictionary mapping color names to rgb values
 COLOR_MAP = {
     "black": (0, 0, 0),
     "white": (255, 255, 255),
