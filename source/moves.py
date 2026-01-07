@@ -34,7 +34,7 @@ def perform_move(move_name, attacker, defender):
             return f"{attacker.name} poisons {defender.name}"
 
         case "REGEN":
-            attacker.status_effects.append({"type": "REGENERATION", "damage": 10, "turns_left": 5})
+            attacker.status_effects.append({"type": "REGEN", "damage": 10, "turns_left": 5})
             return f"{attacker.name} casts regeneration"
 
         case "SCARE":

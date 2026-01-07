@@ -135,7 +135,7 @@ class FightingState(State):
                     self.game_over()
                 messages.append(f"{creature.name} takes {effect['damage']} poison damage")
 
-            elif effect["type"] == "REGENERATION":
+            elif effect["type"] == "REGEN":
                 creature += effect["damage"]
                 if creature.hp > creature.max_hp:
                     creature.hp = creature.max_hp
