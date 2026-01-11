@@ -2,7 +2,7 @@
         {
         "name": "Dyniak",
         "hp": 400,
-        "attack": 65,
+        "attack": 85,
         "defense": 25,
         "evasion": 5,
         "sprite": "resources/creatures/dynia.png",
@@ -11,7 +11,7 @@
         {
         "name": "Gwiazdobiorog",
         "hp": 250,
-        "attack": 60,
+        "attack": 90,
         "defense": 15,
         "evasion": 25,
         "sprite": "resources/creatures/gwiazda.png",
@@ -20,7 +20,7 @@
         {
         "name": "Kosmityczny",
         "hp": 350,
-        "attack": 50,
+        "attack": 70,
         "defense": 20,
         "evasion": 15,
         "sprite": "resources/creatures/kosmita.png",
@@ -29,7 +29,7 @@
         {
         "name": "Dziadolong",
         "hp": 425,
-        "attack": 35,
+        "attack": 55,
         "defense": 40,
         "evasion": 5,
         "sprite": "resources/creatures/kulka.png",
@@ -38,7 +38,7 @@
         {
         "name": "Teletubisiowaty",
         "hp": 360,
-        "attack": 55,
+        "attack": 95,
         "defense": 30,
         "evasion": 10,
         "sprite": "resources/creatures/misiek.png",
@@ -47,7 +47,7 @@
         {
         "name": "Osmiorniczny",
         "hp": 200,
-        "attack": 40,
+        "attack": 100,
         "defense": 20,
         "evasion": 30,
         "sprite": "resources/creatures/osmiornik.png",
@@ -56,7 +56,7 @@
         {
         "name": "Paprykarz",
         "hp": 350,
-        "attack": 70,
+        "attack": 95,
         "defense": 15,
         "evasion": 12,
         "sprite": "resources/creatures/papryka.png",
@@ -65,7 +65,7 @@
         {
         "name": "Kwiatoludny",
         "hp": 275,
-        "attack": 45,
+        "attack": 80,
         "defense": 25,
         "evasion": 15,
         "sprite": "resources/creatures/roslina.png",
@@ -74,7 +74,7 @@
         {
         "name": "Scarry",
         "hp": 110,
-        "attack": 80,
+        "attack": 85,
         "defense": 10,
         "evasion": 45,
         "sprite": "resources/creatures/straszny.png",
@@ -83,7 +83,7 @@
         {
         "name": "Ufoludowaty",
         "hp": 300,
-        "attack": 50,
+        "attack": 75,
         "defense": 15,
         "evasion": 15,
         "sprite": "resources/creatures/ufolud.png",
@@ -92,7 +92,7 @@
         {
         "name": "Owirusowaty",
         "hp": 325,
-        "attack": 45,
+        "attack": 90,
         "defense": 20,
         "evasion": 25,
         "sprite": "resources/creatures/wirus.png",
@@ -101,7 +101,7 @@
         {
         "name": "Wruszkoblady",
         "hp": 150,
-        "attack": 80,
+        "attack": 100  ,
         "defense": 15,
         "evasion": 45,
         "sprite": "resources/creatures/wrozka.png",
